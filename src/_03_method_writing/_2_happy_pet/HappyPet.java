@@ -7,24 +7,52 @@ public class HappyPet {
 	// this will be used to store the happiness of your pet
 	
 	public static void main(String[] args) {
+		
 		// 2. Ask the user what kind of pet they want to buy, and store their answer in a variable
-
+	String pet=JOptionPane.showInputDialog(null, "What type of pet do you want?");
 		// 3. REPEAT steps 4 - 7 enough times to make your pet happy!
 		
 			// 4. Use showOptionDialog to ask the user what they want to do to make their pet happy
 			//    (eg: cuddle, food, water, take a walk, groom, clean up poop).
+	
 			//    Make sure to customize the title and question too.
 			int task = JOptionPane.showOptionDialog(null, "Question", "Title", 0, JOptionPane.INFORMATION_MESSAGE, null,
-					new String[] { "Button1", "Button2", "Button3" }, null);
-
+					new String[] { "cuddle", "food", "water","take a walk", "groom", "clean up poop" }, null);
+				
 			// 6. Use user input to call the appropriate method created in step 5 below.
-
+			
 			// 7. If you determine the happiness level is large enough, tell the
 			//    user that he loves his pet and use break; to exit for loop.
-
+			cuddle(null);
+			food(task,pet);
+			water(task,pet);
+			take_a_walk(task,pet);
+			groom(task,pet);
+			clean_up_poop(task,pet);
+			
 	}
 
 	// 5. Create methods to handle each of your user selections.
 	//    Each method should create a pop-up with the pet's response (eg. cat might purr when pet), 
 	//    and INCREMENT the pet's happiness Level.
+	static void cuddle ( String pet){
+	JOptionPane.showMessageDialog(null," purr");
+		
+	}
+	static void food (int action, String pet){
+		JOptionPane.showMessageDialog(null, " meow");
+	}
+	static void water (int action, String pet){
+		JOptionPane.showMessageDialog(null, " slurp");
+	}
+	static void take_a_walk (int action, String pet){
+		JOptionPane.showMessageDialog(null, " hee-haw");
+	
+}
+	static void groom (int action, String pet){
+		JOptionPane.showMessageDialog(null, " woof");
+	}
+	static void clean_up_poop (int action, String pet){
+		JOptionPane.showMessageDialog(null, " ...");
+}
 }
