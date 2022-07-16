@@ -14,22 +14,33 @@ public class Code4Life {
 	 * If you are not sure, ask your teacher 
 	 * *****************/
 	static boolean canPlaySounds = true;
+	public static void main(String[] args) {
+		
 	
 	
 	// 1. Ask the user how many hours they spent coding this week.
-
+	String answer=JOptionPane.showInputDialog(null,"how many hours have you spent coding this week");
+	int number= Integer.parseInt(answer);
 	// 2. If it is less than or equal to 2, tell them to stop watching YouTube and
 	// write code instead.
-
+	if(number<=2) {
+		JOptionPane.showMessageDialog(null, "stop watching youtube and write code instead");
+	}
 	// 3. If it is greater than or equal to 3 AND less than or equal to 5, tell them
 	// they're a Code Ninja
-
+	else if(number<=5      &&       number>=3) {
+		JOptionPane.showMessageDialog(null, "you are a code ninja");
+	}
+	
 	// 4. If it is more than 5, call the playBatmanTheme  method, then 
 	//    call the displayBatman method.
+	else if(number>5) {
+		playBatmanTheme();
+		displayBatman();
+	}
 
 
-
-	
+	}
 	private static void playBatmanTheme() {
 	// NOTE: Download batman.wav from league-sounds on GitHub: https://github.com/jointheleague/league-sounds
 	//	     Then put batman.wav into the "_2_code_4_life" project
@@ -61,3 +72,4 @@ public class Code4Life {
 	
 
 }
+	
